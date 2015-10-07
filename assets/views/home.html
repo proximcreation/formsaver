@@ -1,0 +1,101 @@
+<!-- <div ng-include="'/views/includes/message-box.html'"></div> -->
+<!-- <div ng-include="'/views/includes/menu.html'"></div> -->
+<header class="col-12">
+  FormSaver rules !
+</header>
+<div class="content col-12 row" ng-if="user._form===undefined">
+   <form class="col-6 col-ol-3">
+     <div class="input-group col-12">
+       <label class="col-4" for="firstname">Firstname</label>
+       <input class="col-8" type="text" ng-model="formData.firstname">
+     </div>
+     <div class="input-group col-12">
+       <label class="col-4" for="lastname">Lastname</label>
+       <input class="col-8" type="text" ng-model="formData.lastname">
+     </div>
+     <div class="input-group col-12">
+       <label class="col-4" for="email">Email</label>
+       <input class="col-8" type="email" ng-model="formData.email">
+     </div>
+     <div class="input-group col-12">
+       <label class="col-4" for="password">Password</label>
+       <input class="col-8" type="password" ng-model="formData.password">
+     </div>
+     <div class="input-group col-12">
+       <button ng-click="login()" class="col-4 col-ol-4 btn btn-success">
+         <i class="fa fa-sign-in"></i>
+         login
+       </button>
+       <button ng-click="subscribe()" class="col-4 btn btn-warning">
+         <i class="fa fa-user-plus"></i>
+         create
+       </button>
+     </div>
+   </form>
+</div>
+<div class="content col-12 row" ng-if="user._form!==undefined">
+   <form class="col-10 col-ol-1">
+     <div class="input-group col-12">
+       <label class="col-4" for="inputText">inputText</label>
+       <input class="col-7" name="inputText" type="text"
+         ng-model="user._form.inputText"
+         ng-blur="formMgt.save('inputText')"
+         ng-focus="formMgt.enterField('inputText')">
+       <div class="col-1 txt-success txt-center" type="text" ng-if="user._form.status.inputText">
+         <i class="fa fa-check"></i>
+       </div>
+     </div>
+
+     <div class="input-group col-12">
+       <label class="col-4" for="inputFloat">inputFloat</label>
+       <input class="col-7" name="inputFloat" type="Number"
+         ng-model="user._form.inputFloat"
+         ng-blur="formMgt.save('inputFloat')"
+         ng-focus="formMgt.enterField('inputFloat')">
+       <div class="col-1 txt-success txt-center" type="text" ng-if="user._form.status.inputFloat">
+         <i class="fa fa-check"></i>
+       </div>
+     </div>
+
+     <div class="input-group col-12">
+       <label class="col-4" for="textarea">textarea</label>
+       <textarea class="col-7" name="textarea" rows="4"
+         ng-model="user._form.textarea"
+         ng-blur="formMgt.save('textarea')"
+         ng-focus="formMgt.enterField('textarea')"></textarea>
+       <div class="col-1 txt-success txt-center" type="text" ng-if="user._form.status.textarea">
+         <i class="fa fa-check"></i>
+       </div>
+     </div>
+
+     <div class="input-group row col-7 col-ol-4 dashed-box">
+      <input type="checkbox" id="checkbox"
+        ng-model="user._form.checkbox"
+        ng-blur="formMgt.save('checkbox')"
+        ng-focus="formMgt.enterField('checkbox')">
+      <label class="col-12 line-height-auto" for="checkbox">
+          <span>checkbox</span>
+       </label>
+      </div>
+
+      <div class="input-group col-12">
+        <label class="col-4" for="select">select</label>
+        <select class="col-7" name="select"
+          ng-model="user._form.select"
+          ng-blur="formMgt.save('select')"
+          ng-focus="formMgt.enterField('select')">
+          <option value="choix 1">choix 1</option>
+          <option value="choix 2">choix 2</option>
+          <option value="choix 3">choix 3</option>
+        </select>
+        <div class="col-1 txt-success txt-center" type="text" ng-if="user._form.status.select">
+          <i class="fa fa-check"></i>
+        </div>
+      </div>
+
+
+   </form>
+</div>
+<footer>
+  2015 FormSaver Inc.
+</footer>

@@ -9,16 +9,20 @@ module.exports = {
 
   attributes: {
     inputText : {
-      type: 'string'
+      type: 'string',
+      defaultsTo : ''
     },
     inputFloat : {
-      type: 'float'
+      type: 'float',
+      defaultsTo : .0
     },
     textarea : {
-      type: 'float'
+      type: 'string',
+      defaultsTo : ''
     },
     checkbox : {
-      type: 'boolean'
+      type: 'boolean',
+      defaultsTo : false
     },
     select : {
       type: 'string',

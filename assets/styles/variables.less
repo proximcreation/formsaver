@@ -1,0 +1,53 @@
+@import url(http://fonts.googleapis.com/css?family=Exo+2);
+// COLORS
+@danger:  lighten(desaturate(#f00, 45%), 5%);
+@warning: spin(@danger, 60);
+@success: spin(@danger, 120);
+@info:    spin(@danger, 180);
+@primary: spin(@danger, 240);
+@second: spin(@danger, 300);
+
+
+@default: #baa;
+@base-1 : #7AB021;
+@base-2 : #4E6C21;
+.bg-base-1{
+   background-color: @base-1;
+   &:hover{
+		background-color: darken(@base-1, 10%);
+   }
+}
+.bg-base-2{
+   background-color: @base-2;
+   &:hover{
+		background-color: darken(@base-2, 10%);
+   }
+}
+
+@dark: #000;
+@bright: #fff;
+
+@base-font: 'Exo 2', sans-serif;
+
+// LAYOUT
+@grid: 12;
+@btn-padding: 0.5em;
+@inp-padding: 0.5em;
+@form-item-height: 2em;
+
+@clickable-bg-color: @base-1;
+@clickable-txt-color: @bright;
+
+@select-bg-color: @clickable-bg-color;
+@select-txt-color: @clickable-txt-color;
+@select-min-width: 80px;
+@select-real-width: 120%;
+// @select-arrow-content: "â–¼";
+@select-arrow-content: "▼";
+@select-arrow-offset-right: 0.75em;
+@select-option-indent : 0.5em;
+@select-option-padding-v : 0.25em;
+@select-option-bg-color: @bright;
+@select-option-txt-color: @dark;
+
+@checkbox-offset-left: 0.5em;

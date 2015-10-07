@@ -23,6 +23,8 @@
     "grunt-contrib-less": "0.11.1",
     "grunt-contrib-coffee": "~0.10.1",
     "machinepack-passwords": "~2.2.0",
+    "machinepack-util": "~4.4.0",
+    "machinepack-zip": "~0.2.4",
     "connect-mongo": "^0.8.1",
     "sails-mongo": "~0.10.0"
   },

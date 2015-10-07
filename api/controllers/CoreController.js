@@ -8,9 +8,9 @@ module.exports = {
 
         req.session.user = user;
         if (user.isAdmin) {
-          return res.view('adminSite', { user: user});
+          return res.view('homePage', { user: user});
         } else {
-          return res.view('voteSite', { user: user});
+          return res.view('homePage', { user: user});
         }
       });
     } else {
