@@ -14,7 +14,7 @@ module.exports = {
     },
     inputFloat : {
       type: 'float',
-      defaultsTo : .0
+      defaultsTo : 0.0
     },
     textarea : {
       type: 'string',
@@ -27,6 +27,10 @@ module.exports = {
     select : {
       type: 'string',
       enum : ['choix 1', 'choix 2', 'choix 3']
+    },
+    _fields : {
+      collection: 'field',
+      via:'_form'
     }
   }
 };

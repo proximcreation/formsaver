@@ -70,13 +70,14 @@
        </div>
      </div>
 
-     <div class="input-group row col-7 col-ol-4 dashed-box">
+     <label class="col-4">checkbox</label>
+     <div class="input-group row col-7">
       <input type="checkbox" id="checkbox"
         ng-model="user._form.checkbox"
         ng-blur="formMgt.save('checkbox')"
         ng-focus="formMgt.enterField('checkbox')">
       <label class="col-12 line-height-auto" for="checkbox">
-          <span>checkbox</span>
+          <span>{{user._form.checkbox?'Oui':'Non'}}</span>
        </label>
       </div>
 
