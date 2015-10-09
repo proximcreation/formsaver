@@ -1,6 +1,14 @@
-app.controller('CoreCtrl', ['$scope', '$http', '$location', '$timeout', function ($scope, $http, $location, $timeout) {
+app
+.controller('CoreCtrl', ['$scope', '$window', '$http', '$location', '$timeout', function ($scope, $window, $http, $location, $timeout) {
 
-	$scope.user = {};
+	if($window.me){
+		$scope.user = $window.me;
+		$http.get('/api/form/'+$scope.user._form).success(function(form){
+			$scope.user._form = form;
+		});
+	} else {
+		$scope.user = {};
+	}
 	$scope.formData = {};
 
 	$scope.subscribe = function(){
@@ -51,7 +59,18 @@ app.controller('CoreCtrl', ['$scope', '$http', '$location', '$timeout', function
 		})
 		.error(function(){
 			console.log('login failed → shit happens !');
+		});
+	};
+
+	$scope.logout = function(){
+		$http.post('/api/auth/logout', $scope.formData)
+		.success(function(user){
+			console.log('logged out, Bye !!!');
+			$window.location.href = '/';
 		})
+		.error(function(){
+			console.log('logout failed → shit happens !');
+		});
 	};
 
 	$scope.formMgt = {
@@ -67,7 +86,16 @@ app.controller('CoreCtrl', ['$scope', '$http', '$location', '$timeout', function
 			}
 		},
 		enterField : function(f){
+			if($scope.user._form.status === undefined){
+				$scope.user._form.status = {};
+			}
 			$scope.user._form.status[f] = false;
 		}
 	};
+}])
+.controller('AdminCtrl', ['$scope', '$window', '$http', '$location', '$timeout', function ($scope, $window, $http, $location, $timeout) {
+
+	$http.get('/api/user?populate=_form').success(function(data){
+		$scope.users = data;
+	});
 }]);

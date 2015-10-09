@@ -1,0 +1,21 @@
+<header class="col-12" ng-include="'/views/includes/header.html'"></header>
+<div ng-include="'/views/includes/menu.html'"></div>
+<div class="content col-12 row">
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Form id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in users" ng-hide="item.isAdmin">
+        <td>{{item.lastname}}</td>
+        <td>{{item.firsname}}</td>
+        <td>{{item._form.id}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<footer ng-include="'/views/includes/footer.html'"></footer>

@@ -7,6 +7,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 		templateUrl: 'views/home.html',
 		controller: 'HomeCtrl'
 	})
+	.when('/admin', {
+		 templateUrl: 'views/admin.html',
+		 controller: 'AdminCtrl'
+	})
 	.otherwise({ redirectTo: '/' });
 
 	$locationProvider.hashPrefix('!');

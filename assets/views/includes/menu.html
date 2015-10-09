@@ -1,0 +1,23 @@
+<!-- ================================================== -->
+<!-- === TOOLBAR ====================================== -->
+<!-- ================================================== -->
+<div class="toolbar col-12">
+   <div class="user-menu menu">
+      <a href="" class="btn btn-transparent" ng-click="logout()">
+         <i class="fa fa-sign-out fa-lg"></i><br />
+         <span>Déconnecter</span>
+      </a>
+   </div>
+   <div class="main-menu menu">
+      <a href="/#!/" class="btn btn-transparent" ng-click="">
+         <i class="fa fa-home fa-lg"></i><br />
+         <span>Accueil</span>
+      </a>
+
+      <a href="/#!/admin" class="btn btn-transparent" ng-if="user.isAdmin">
+         <i class="fa fa-files-o fa-lg"></i><br />
+         <span>Admin</span>
+      </a>
+
+   </div>
+</div>

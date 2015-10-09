@@ -38,6 +38,9 @@
 
   <body ng-controller="CoreCtrl" class="row">
     <div ng-view></div>
+    <script type="text/javascript">
+      window.me = <%- JSON.stringify(user) %>;
+    </script>
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
